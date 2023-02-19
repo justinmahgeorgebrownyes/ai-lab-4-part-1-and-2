@@ -302,16 +302,16 @@
     <ClInclude Include="..\src\StarShip.h">
       <Filter>Game Objects</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\GAME3001-W2023-Labs-A\GAME3001-W2023-Lab4\src\NeighbourTile.h">
-      <Filter>Enums</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\GAME3001-W2023-Labs-A\GAME3001-W2023-Lab4\src\TileStatus.h">
-      <Filter>Enums</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Tile.h">
       <Filter>Navigation</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Heuristic.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TileStatus.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\NeighbourTile.h">
       <Filter>Enums</Filter>
     </ClInclude>
   </ItemGroup>

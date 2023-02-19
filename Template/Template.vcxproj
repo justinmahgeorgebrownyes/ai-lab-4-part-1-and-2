@@ -195,8 +195,6 @@
     <ClCompile Include="..\src\Util.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\GAME3001-W2023-Labs-A\GAME3001-W2023-Lab4\src\NeighbourTile.h" />
-    <ClInclude Include="..\..\..\GAME3001-W2023-Labs-A\GAME3001-W2023-Lab4\src\TileStatus.h" />
     <ClInclude Include="..\include\IMGUI\imconfig.h" />
     <ClInclude Include="..\include\IMGUI\imgui.h" />
     <ClInclude Include="..\include\IMGUI\imgui_internal.h" />
@@ -214,11 +212,13 @@
     <ClInclude Include="..\src\ImGuiWindowFrame.h" />
     <ClInclude Include="..\src\InputType.h" />
     <ClInclude Include="..\src\NavigationObject.h" />
+    <ClInclude Include="..\src\NeighbourTile.h" />
     <ClInclude Include="..\src\Obstacle.h" />
     <ClInclude Include="..\src\SoundType.h" />
     <ClInclude Include="..\src\Sprite.h" />
     <ClInclude Include="..\src\StarShip.h" />
     <ClInclude Include="..\src\Tile.h" />
+    <ClInclude Include="..\src\TileStatus.h" />
     <ClInclude Include="..\src\UIControl.h" />
     <ClInclude Include="..\src\DisplayObject.h" />
     <ClInclude Include="..\src\EndScene.h" />

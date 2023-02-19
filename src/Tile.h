@@ -43,7 +43,7 @@ private:
 	Label* m_costLabel;
 	Label* m_statusLabel;
 
-	Tile* m_neighbours[NUM_OF_NEIGHBOUR_TILES];
+	Tile* m_neighbours[static_cast<int>(NeighbourTile::NUM_OF_NEIGHBOUR_TILES)];
 };
 
 #endif /* defined (__TILE__) */
