@@ -62,6 +62,9 @@ void PlayScene::Start()
 
 	auto offset = glm::vec2(Config::TILE_SIZE * 0.5f, Config::TILE_SIZE * 0.5f);
 
+	m_currentHeuristic = Heuristic::MANHATTAN;
+
+
 	// Add the Target to the Scene
 	m_pTarget = new Target(); // instantiate an object of type Target
 	m_pTarget->GetTransform()->position = m_getTile(15, 11)->GetTransform()->position + offset;
@@ -81,6 +84,8 @@ void PlayScene::Start()
 
 	SoundManager::Instance().Load("../Assets/Audio/yay.ogg", "yay", SoundType::SOUND_SFX);
 	SoundManager::Instance().Load("../Assets/Audio/thunder.ogg", "thunder", SoundType::SOUND_SFX);
+
+	m_computeTileCosts();
 
 	ImGuiWindowFrame::Instance().SetGuiFunction(std::bind(&PlayScene::GUI_Function, this));
 }
@@ -175,6 +180,27 @@ void PlayScene::m_setGridEnabled(const bool state)
 void PlayScene::m_computeTileCosts()
 {
 	// for next lab (4b)
+	float distance = 0.0f;
+	float dx = 0.0f;
+	float dy = 0.0f;
+
+	for (const auto tile:m_pGrid) {
+
+		switch (m_currentHeuristic) {
+
+		case Heuristic::MANHATTAN:
+			dx = abs(tile -> GetGridPosition().x - m_pTarget->GetGridPosition().x);
+			dy = abs(tile -> GetGridPosition().y - m_pTarget->GetGridPosition().y);
+			distance = dx + dy;
+
+
+			break;
+		case Heuristic::EUCLIDEAN:
+			distance = Util::Distance(tile->GetGridPosition(), m_pTarget->GetGridPosition());
+			break;
+		}
+		tile->SetTileCost(distance);
+	}
 }
 
 Tile* PlayScene::m_getTile(const int col, const int row) const

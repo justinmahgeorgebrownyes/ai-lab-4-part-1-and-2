@@ -6,6 +6,7 @@
 #include "Target.h"
 #include "StarShip.h"
 #include "Tile.h"
+#include "Heuristic.h"
 
 class PlayScene : public Scene
 {
@@ -47,6 +48,7 @@ private:
 
 	// heuristic
 	// we'll add this in later (lab 4b)
+	Heuristic m_currentHeuristic;
 };
 
 #endif /* defined (__PLAY_SCENE__) */
